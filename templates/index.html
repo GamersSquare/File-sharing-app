@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Sharing App</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Your File</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="file" class="form-control" name="file" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        {% if download_url %}
+            <div class="alert alert-success mt-4">
+                File uploaded! <a href="{{ download_url }}" target="_blank">Download Here</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

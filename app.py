@@ -7,7 +7,7 @@ app = Flask(__name__)
 s3 = boto3.client('s3')
 
 # Replace with your bucket name
-S3_BUCKET = 'your-s3-bucket-name'
+S3_BUCKET = 'files-bucket-number1'
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 

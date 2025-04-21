@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 s3 = boto3.client('s3')
-S3_BUCKET = 'your-s3-bucket-name'  # <-- change this!
+S3_BUCKET = 'files-bucket-number1'
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 

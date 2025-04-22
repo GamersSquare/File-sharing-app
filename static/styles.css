@@ -16,26 +16,22 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
-/* Optional: Add a decorative image in the top corner */
-.container::before {
-    content: "";
-    background: url('static/img/upload-decor.svg') no-repeat right top;
-    background-size: 80px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
+/* Optional: Add a decorative image */
+.decor-icon {
+    width: 80px;
     opacity: 0.1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 /* Header */
 h2 {
-    text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 /* Form */
@@ -43,6 +39,7 @@ form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* File input */
@@ -53,6 +50,8 @@ input[type="file"] {
     border-radius: 8px;
     text-align: center;
     transition: background 0.3s;
+    width: 100%;
+    max-width: 400px;
 }
 
 input[type="file"]:hover {
@@ -62,7 +61,7 @@ input[type="file"]:hover {
 /* Button */
 .btn-primary {
     margin-top: 20px;
-    padding: 12px;
+    padding: 12px 20px;
     background: #007bff;
     border: none;
     color: #fff;
@@ -81,7 +80,7 @@ input[type="file"]:hover {
     background-color: #d1f0d1;
     color: #27632a;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 8px;
     border-left: 5px solid #28a745;
     font-weight: 500;

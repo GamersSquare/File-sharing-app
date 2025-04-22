@@ -1,44 +1,88 @@
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e9f0ff, #fdfdfd);
+    padding-top: 60px;
+    margin: 0;
 }
 
+/* Card-style container */
 .container {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Optional: Add a decorative image in the top corner */
+.container::before {
+    content: "";
+    background: url('static/img/upload-decor.svg') no-repeat right top;
+    background-size: 80px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+}
+
+/* Header */
 h2 {
     text-align: center;
     color: #333;
-}
-
-form {
-    margin-top: 20px;
-}
-
-input[type="file"] {
     margin-bottom: 20px;
 }
 
-.btn-primary {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    font-size: 16px;
+/* Form */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* File input */
+input[type="file"] {
+    padding: 10px;
+    background: #f0f4f8;
+    border: 2px dashed #a0b4c3;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+input[type="file"]:hover {
+    background: #e2ecf5;
+}
+
+/* Button */
+.btn-primary {
+    margin-top: 20px;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Success alert */
 .alert-success {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #d1f0d1;
+    color: #27632a;
     padding: 15px;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    border-left: 5px solid #28a745;
+    font-weight: 500;
 }

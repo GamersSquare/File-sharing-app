@@ -1,40 +1,49 @@
-/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e9f0ff, #fdfdfd);
-    padding-top: 60px;
-    margin: 0;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
 }
 
-/* Card-style container */
 .container {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 30px;
     background: #ffffff;
+    padding: 40px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
     position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
-/* Optional: Add a decorative image */
-.decor-icon {
-    width: 80px;
-    opacity: 0.1;
+.container::before {
+    content: "";
+    background: url('https://cdn-icons-png.flaticon.com/512/2920/2920277.png') no-repeat top right;
+    background-size: 80px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.1;
 }
 
-/* Header */
-h2 {
+h1 {
+    font-size: 2rem;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-/* Form */
 form {
     margin-top: 20px;
     display: flex;
@@ -42,46 +51,66 @@ form {
     align-items: center;
 }
 
-/* File input */
 input[type="file"] {
-    padding: 10px;
+    padding: 12px;
     background: #f0f4f8;
     border: 2px dashed #a0b4c3;
     border-radius: 8px;
-    text-align: center;
-    transition: background 0.3s;
     width: 100%;
     max-width: 400px;
+    text-align: center;
+    transition: background 0.3s;
+    margin-bottom: 20px;
 }
 
 input[type="file"]:hover {
     background: #e2ecf5;
 }
 
-/* Button */
-.btn-primary {
-    margin-top: 20px;
-    padding: 12px 20px;
+button {
+    padding: 12px 24px;
     background: #007bff;
     border: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-/* Success alert */
 .alert-success {
     background-color: #d1f0d1;
     color: #27632a;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 8px;
     border-left: 5px solid #28a745;
     font-weight: 500;
+}
+
+.file-list {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.file-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.file-list li {
+    margin-bottom: 10px;
+}
+
+.file-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.file-list a:hover {
+    text-decoration: underline;
 }

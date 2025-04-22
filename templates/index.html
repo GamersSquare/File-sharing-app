@@ -7,6 +7,7 @@
 <body>
     <div class="container">
         <h1>Upload a File</h1>
+        <img src="{{ url_for('static', filename='img/upload-decor.svg') }}" alt="Upload Decoration" class="img-fluid" />
         <form method="POST" enctype="multipart/form-data">
             <input type="file" name="file" required>
             <button type="submit">Upload</button>

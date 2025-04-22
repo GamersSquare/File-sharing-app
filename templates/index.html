@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>File Uploader</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Upload a File</h1>
-        <img src="{{ url_for('static', filename='img/upload-decor.svg') }}" alt="Upload Decoration" class="img-fluid" />
+        <h2>Upload a File</h2>
+
+        <!-- Decorative image -->
+        <img src="{{ url_for('static', filename='img/upload-decor.svg') }}" alt="Decorative Icon" class="decor-icon">
+
         <form method="POST" enctype="multipart/form-data">
             <input type="file" name="file" required>
-            <button type="submit">Upload</button>
+            <button class="btn-primary" type="submit">Upload</button>
         </form>
 
         {% if file_url %}
-        <div class="link-box">
-            <p>✅ File uploaded!</p>
-            <a href="{{ file_url }}" target="_blank">Download File</a>
+        <div class="alert-success">
+            ✅ File uploaded successfully! <br>
+            <a href="{{ file_url }}" target="_blank">Click here to download</a>
         </div>
         {% endif %}
     </div>

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect
 import boto3
-import os
 from werkzeug.utils import secure_filename
 from botocore.exceptions import ClientError
 
@@ -11,16 +10,14 @@ S3_BUCKET = 'files-bucket-number1'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 s3 = boto3.client('s3')
 
-# Helper to check allowed files
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# Helper to check if file already exists in S3
 def file_exists_in_s3(filename):
     try:
         s3.head_object(Bucket=S3_BUCKET, Key=filename)
         return True
-    except ClientError as e:
+    except ClientError:
         return False
 
 @app.route('/', methods=['GET', 'POST'])
@@ -42,7 +39,7 @@ def upload_file():
                     s3.put_object(Bucket=S3_BUCKET, Key=filename, Body=file.read())
                     message = f"✅ File '{filename}' uploaded successfully!"
 
-    # List all files in S3 bucket
+    # List all files
     file_list = []
     try:
         response = s3.list_objects_v2(Bucket=S3_BUCKET)
